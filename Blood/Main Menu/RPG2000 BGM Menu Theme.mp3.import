@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c68r1r2quv4cd"
+path="res://.godot/imported/RPG2000 BGM Menu Theme.mp3-eb6f52feb25751acce3fc79418b38f66.mp3str"
+
+[deps]
+
+source_file="res://Main Menu/RPG2000 BGM Menu Theme.mp3"
+dest_files=["res://.godot/imported/RPG2000 BGM Menu Theme.mp3-eb6f52feb25751acce3fc79418b38f66.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

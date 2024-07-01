@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxopx4ghwvpy0"]
+
+[ext_resource type="Script" path="res://Main Menu/Blood.gd" id="1_fb2my"]
+[ext_resource type="Texture2D" uid="uid://tixfpjkmrw5s" path="res://maxresdefault-3675895489.jpg" id="2_olqpk"]
+[ext_resource type="AudioStream" uid="uid://c68r1r2quv4cd" path="res://Main Menu/RPG2000 BGM Menu Theme.mp3" id="3_brwq4"]
+
+[sub_resource type="Theme" id="Theme_62tys"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_fb2my")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 296.0
+offset_right = 704.0
+offset_bottom = 427.0
+theme = SubResource("Theme_62tys")
+text = "Blood"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 480.0
+offset_right = 704.0
+offset_bottom = 608.0
+text = "Blood"
+
+[node name="Blood" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(576, 320)
+scale = Vector2(0.9, 0.888889)
+texture = ExtResource("2_olqpk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_brwq4")
+volume_db = -8.771
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

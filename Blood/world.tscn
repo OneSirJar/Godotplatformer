@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjyc77tfa7403"]
+
+[ext_resource type="PackedScene" uid="uid://dq75a88p6arwp" path="res://Player/philip.tscn" id="1_yma12"]
+[ext_resource type="AudioStream" uid="uid://bcm51bjrfa1yc" path="res://World/Colour Radio.mp3" id="2_k8f76"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y83l6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j8nix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4qqw"]
+size = Vector2(335, 63)
+
+[node name="World" type="Node2D"]
+
+[node name="Phillip" parent="." instance=ExtResource("1_yma12")]
+position = Vector2(265, 306)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_y83l6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color(0.164706, 0.443137, 0.807843, 1)
+self_modulate = Color(0.341176, 0.529412, 0.85098, 1)
+material = SubResource("CanvasItemMaterial_j8nix")
+position = Vector2(303, 369)
+shape = SubResource("RectangleShape2D_e4qqw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 135.0
+offset_top = 339.0
+offset_right = 472.0
+offset_bottom = 402.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k8f76")
+volume_db = -8.755
+autoplay = true
