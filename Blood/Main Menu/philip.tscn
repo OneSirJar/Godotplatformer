@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckgqe54vudk6k"]
+
+[ext_resource type="Texture2D" uid="uid://cmff14uqrqwq6" path="res://Player/Moving/right.png" id="1_hrq57"]
+[ext_resource type="Script" path="res://World/philip.gd" id="1_lcwlk"]
+[ext_resource type="Texture2D" uid="uid://bferm5io2xy2r" path="res://Player/Moving/left.png" id="1_vra4c"]
+[ext_resource type="Texture2D" uid="uid://dhgcapj0ehh82" path="res://Player/Moving/left 2.png" id="2_0vwm4"]
+[ext_resource type="Texture2D" uid="uid://b6vd4ax0khb74" path="res://Player/Moving/right 2.png" id="2_aoju8"]
+[ext_resource type="Texture2D" uid="uid://1wv6ugodmleb" path="res://Player/Moving/left 3.png" id="3_1nkv8"]
+[ext_resource type="Texture2D" uid="uid://ruwnhu34wehx" path="res://Player/Moving/right 3.png" id="3_nbpc5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uri8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hrq57")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vra4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0vwm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1nkv8")
+}],
+"loop": false,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hrq57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aoju8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nbpc5")
+}],
+"loop": false,
+"name": &"Right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tkpt"]
+height = 32.0
+
+[node name="Phillip" type="CharacterBody2D"]
+script = ExtResource("1_lcwlk")
+
+[node name="He walkin\'" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uri8g")
+animation = &"Right"
+
+[node name="Fat boy" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5tkpt")
