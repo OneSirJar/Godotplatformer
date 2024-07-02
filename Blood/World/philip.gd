@@ -6,8 +6,15 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var direction : Vector2 = Vector2.ZERO
 
 @onready var animated_sprite : AnimatedSprite2D = $"He walkin'"
+
+func animate_the_fat_boy ():
+	if direction.x != 0:
+		animated_sprite.play("Right")
+	else:
+		animated_sprite.play("Idle")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -20,10 +27,13 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction.x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	animate_the_fat_boy()
+	
