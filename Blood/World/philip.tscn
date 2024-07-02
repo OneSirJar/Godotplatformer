@@ -39,6 +39,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_hrq57")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_vra4c")
 }, {
 "duration": 1.0,
@@ -74,9 +82,7 @@ script = ExtResource("1_lcwlk")
 
 [node name="He walkin\'" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uri8g")
-animation = &"Right"
-frame = 2
-frame_progress = 0.0741805
+animation = &"Idle"
 
 [node name="Fat boy" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5tkpt")
