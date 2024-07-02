@@ -15,6 +15,14 @@ height = 32.0
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_hrq57")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_vra4c")
 }, {
 "duration": 1.0,
@@ -23,21 +31,18 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_1nkv8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Left",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_hrq57")
-}, {
 "duration": 1.0,
 "texture": ExtResource("2_aoju8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_nbpc5")
 }],
-"loop": true,
+"loop": false,
 "name": &"Right",
 "speed": 5.0
 }]
