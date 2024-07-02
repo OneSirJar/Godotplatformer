@@ -12,9 +12,15 @@ var direction : Vector2 = Vector2.ZERO
 
 func animate_the_fat_boy ():
 	if direction.x != 0:
-		animated_sprite.play("Right")
+		animated_sprite.play("Move")
 	else:
 		animated_sprite.play("Idle")
+		
+func the_other_way_you_oaf ():
+	if direction.x > 0:
+		animated_sprite.flip_h = false
+	elif direction.x < 0:
+		animated_sprite.flip_h = true
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,4 +42,4 @@ func _physics_process(delta):
 
 	move_and_slide()
 	animate_the_fat_boy()
-	
+	the_other_way_you_oaf()
