@@ -74,7 +74,9 @@ script = ExtResource("1_lcwlk")
 
 [node name="He walkin\'" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uri8g")
-animation = &"Left"
+animation = &"Right"
+frame = 2
+frame_progress = 0.0741805
 
 [node name="Fat boy" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5tkpt")
