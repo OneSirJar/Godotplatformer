@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfyh2wqrqosf0"]
+[gd_scene load_steps=7 format=3 uid="uid://bfyh2wqrqosf0"]
 
 [ext_resource type="PackedScene" uid="uid://ckgqe54vudk6k" path="res://Player/philip.tscn" id="1_yma12"]
 [ext_resource type="AudioStream" uid="uid://bcm51bjrfa1yc" path="res://World/Colour Radio.mp3" id="2_k8f76"]
@@ -7,13 +7,16 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j8nix"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srr6c"]
+size = Vector2(523.5, 61.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4qqw"]
-size = Vector2(1056.5, 61.5)
+size = Vector2(86.875, 3.875)
 
 [node name="World" type="Node2D"]
 
 [node name="Phillip" parent="." instance=ExtResource("1_yma12")]
-position = Vector2(255, 319)
+position = Vector2(161, 321)
 
 [node name="Camera2D" type="Camera2D" parent="Phillip"]
 position = Vector2(-6, 3)
@@ -29,16 +32,54 @@ physics_material_override = SubResource("PhysicsMaterial_y83l6")
 modulate = Color(0.164706, 0.443137, 0.807843, 1)
 self_modulate = Color(0.341176, 0.529412, 0.85098, 1)
 material = SubResource("CanvasItemMaterial_j8nix")
-position = Vector2(663.75, 369.75)
+position = Vector2(397.25, 369.75)
+shape = SubResource("RectangleShape2D_srr6c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color(0.164706, 0.443137, 0.807843, 1)
+self_modulate = Color(0.341176, 0.529412, 0.85098, 1)
+material = SubResource("CanvasItemMaterial_j8nix")
+position = Vector2(331.563, 262.063)
 shape = SubResource("RectangleShape2D_e4qqw")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 offset_left = 135.0
-offset_top = 339.0
-offset_right = 1190.0
-offset_bottom = 402.0
+offset_top = 338.0
+offset_right = 658.0
+offset_bottom = 401.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_k8f76")
 volume_db = -8.755
 autoplay = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 286.0
+offset_top = 259.0
+offset_right = 375.0
+offset_bottom = 340.0
+
+[node name="Panel2" type="Panel" parent="Panel2"]
+offset_left = -41.0
+offset_top = -56.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="Panel3" type="Panel" parent="Panel2"]
+offset_left = 13.0
+offset_top = -110.0
+offset_right = 64.0
+offset_bottom = 81.0
+
+[node name="Panel4" type="Panel" parent="Panel2"]
+offset_left = 62.0
+offset_top = -180.0
+offset_right = 154.0
+offset_bottom = 80.0
+
+[node name="Panel5" type="Panel" parent="Panel2"]
+offset_left = -153.0
+offset_top = 80.0
+offset_right = 374.0
+offset_bottom = 140.0
