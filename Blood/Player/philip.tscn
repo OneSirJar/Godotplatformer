@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c1hbvoyuytaht" path="res://Player/67555.png" id="2_17ocu"]
 [ext_resource type="Texture2D" uid="uid://c1bvvgy76xw8e" path="res://Player/67557.png" id="2_n12rm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tkpt"]
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi4na"]
+size = Vector2(19, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_barmx"]
 atlas = ExtResource("2_n12rm")
@@ -104,9 +104,11 @@ animations = [{
 script = ExtResource("1_lcwlk")
 
 [node name="Fat boy" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_5tkpt")
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_xi4na")
 
 [node name="He walkin\'" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_uri8g")
 animation = &"Move"
 flip_h = true
