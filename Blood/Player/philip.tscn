@@ -1,11 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckgqe54vudk6k"]
+[gd_scene load_steps=16 format=3 uid="uid://ckgqe54vudk6k"]
 
-[ext_resource type="Texture2D" uid="uid://cmff14uqrqwq6" path="res://Player/Moving/right.png" id="1_hrq57"]
-[ext_resource type="Script" path="res://World/philip.gd" id="1_lcwlk"]
+[ext_resource type="Script" path="res://Player/philip.gd" id="1_lcwlk"]
 [ext_resource type="Texture2D" uid="uid://c1hbvoyuytaht" path="res://Player/67555.png" id="2_17ocu"]
-[ext_resource type="Texture2D" uid="uid://b6vd4ax0khb74" path="res://Player/Moving/right 2.png" id="2_aoju8"]
 [ext_resource type="Texture2D" uid="uid://c1bvvgy76xw8e" path="res://Player/67557.png" id="2_n12rm"]
-[ext_resource type="Texture2D" uid="uid://ruwnhu34wehx" path="res://Player/Moving/right 3.png" id="3_nbpc5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tkpt"]
 height = 32.0
@@ -33,6 +30,22 @@ region = Rect2(24, 0, 24, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0guj"]
 atlas = ExtResource("2_17ocu")
 region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n30m"]
+atlas = ExtResource("2_17ocu")
+region = Rect2(24, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exuns"]
+atlas = ExtResource("2_17ocu")
+region = Rect2(0, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y165o"]
+atlas = ExtResource("2_17ocu")
+region = Rect2(24, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nr0w"]
+atlas = ExtResource("2_17ocu")
+region = Rect2(48, 32, 24, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uri8g"]
 animations = [{
@@ -66,7 +79,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hrq57")
+"texture": SubResource("AtlasTexture_4n30m")
 }],
 "loop": false,
 "name": &"Idle",
@@ -74,13 +87,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_aoju8")
+"texture": SubResource("AtlasTexture_exuns")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_nbpc5")
+"texture": SubResource("AtlasTexture_y165o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_hrq57")
+"texture": SubResource("AtlasTexture_2nr0w")
 }],
 "loop": false,
 "name": &"Move",
@@ -95,5 +108,5 @@ shape = SubResource("CapsuleShape2D_5tkpt")
 
 [node name="He walkin\'" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uri8g")
-animation = &"Attack"
+animation = &"Move"
 flip_h = true
