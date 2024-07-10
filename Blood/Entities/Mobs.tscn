@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://da24cmjxb68g3"]
+[gd_scene load_steps=4 format=3 uid="uid://da24cmjxb68g3"]
+
+[ext_resource type="Texture2D" uid="uid://cm4b25kh0bf8s" path="res://Entities/70199.png" id="1_rfmca"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2odp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rfmca")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1c3j"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="He\'s dangerous!!!!11" type="RigidBody2D" parent="."]
+
+[node name="Oh lawd he comin\'" type="AnimatedSprite2D" parent="He\'s dangerous!!!!11"]
+scale = Vector2(0.44125, 0.424022)
+sprite_frames = SubResource("SpriteFrames_2odp6")
+animation = &"Idle"
+
+[node name="Bad touch" type="CollisionShape2D" parent="He\'s dangerous!!!!11"]
+shape = SubResource("RectangleShape2D_i1c3j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="He\'s dangerous!!!!11"]
